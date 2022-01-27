@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:inventory_management/src/screens/add_product_screen.dart';
 
 import 'sample_feature/sample_item_details_view.dart';
 import 'sample_feature/sample_item_list_view.dart';
@@ -22,8 +23,9 @@ class MyApp extends StatelessWidget {
       animation: settingsController,
       builder: (BuildContext context, Widget? child) {
         return MaterialApp(
+          // home: AddProductScreen(),
           routes: {
-            //'/': (context) =>
+            // '/': (context) => AddProductScreen(),
           },
           restorationScopeId: 'app',
           localizationsDelegates: const [
@@ -48,8 +50,8 @@ class MyApp extends StatelessWidget {
                 switch (routeSettings.name) {
                   case SettingsView.routeName:
                     return SettingsView(controller: settingsController);
-                  case SampleItemDetailsView.routeName:
-                    return const SampleItemDetailsView();
+                  case AddProductScreen.routeName:
+                    return const AddProductScreen();
                   case SampleItemListView.routeName:
                   default:
                     return const SampleItemListView();
